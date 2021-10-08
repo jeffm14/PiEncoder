@@ -16,6 +16,7 @@ def encode(encode_input: Number) -> Tuple:
         incrementing_number = incrementing_number * 2
         mp.dps = incrementing_number  # set number of digits
         pi_str = str(mp.pi)  # print pi to a thousand places
+        pi_str = pi_str.replace(".", "")
     else:
         loc = pi_str.find(substring)
         return loc, loc + len(substring)
@@ -29,9 +30,10 @@ def decode(decode_input: Tuple) -> Number:
     """
     mp.dps = decode_input[1]  # set number of digits
     pi_str = str(mp.pi)  # print pi to a thousand places
+    pi_str = pi_str.replace(".", "")
     return int(pi_str[decode_input[0]: decode_input[1]])
 
 
-test = encode(14)
+test = encode(84)
 print(test)
 print(decode(test))
