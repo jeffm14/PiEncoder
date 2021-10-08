@@ -13,7 +13,7 @@ def encode(encode_input: Number) -> Tuple:
     pi_str = ''
     incrementing_number = 1000
     while substring not in pi_str:
-        incrementing_number = incrementing_number * 2
+        incrementing_number = incrementing_number * incrementing_number
         mp.dps = incrementing_number  # set number of digits
         pi_str = str(mp.pi)  # print pi to a thousand places
         pi_str = pi_str.replace(".", "")
